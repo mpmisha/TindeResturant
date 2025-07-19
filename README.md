@@ -1,4 +1,4 @@
-# TindeResturant
+# Copilot bootstrap
 
 A bootstrap project template for building modern React applications with TypeScript, Fluent UI v2, and GitHub Copilot integration.
 
