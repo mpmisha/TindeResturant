@@ -140,7 +140,7 @@ const SwipeCard: React.FC<SwipeCardProps> = ({ dish, isActive, stackPosition }) 
   } : {
     transform: '',
     opacity: 1,
-    transition: 'all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
+    transition: 'none',
   };
 
   return (
@@ -197,34 +197,12 @@ const SwipeCard: React.FC<SwipeCardProps> = ({ dish, isActive, stackPosition }) 
             >
               {showFullDescription ? dish.fullDescription : dish.shortDescription}
             </Text>
-            {isActive && (
               <Text size={200} className={styles.expandHint}>
                 {showFullDescription ? 'Tap to collapse' : 'Tap for more details'}
               </Text>
-            )}
           </div>
         </div>
       </Card>
-      
-      {/* Swipe direction indicators */}
-      {isActive && touchState.isDragging && (
-        <>
-          <div 
-            className={`${styles.swipeIndicator} ${styles.leftIndicator}`}
-            style={{ opacity: deltaX < -50 ? Math.min(1, Math.abs(deltaX) / 100) : 0 }}
-          >
-            <Text size={600} weight="bold">✗</Text>
-            <Text size={300}>Don't Want</Text>
-          </div>
-          <div 
-            className={`${styles.swipeIndicator} ${styles.rightIndicator}`}
-            style={{ opacity: deltaX > 50 ? Math.min(1, deltaX / 100) : 0 }}
-          >
-            <Text size={600} weight="bold">✓</Text>
-            <Text size={300}>Want This!</Text>
-          </div>
-        </>
-      )}
     </div>
   );
 };
