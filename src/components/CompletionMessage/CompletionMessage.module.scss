@@ -1,0 +1,341 @@
+.completionMessage {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-xl);
+  text-align: center;
+  padding: var(--spacing-xl);
+  max-width: 500px;
+  margin: 0 auto;
+  min-height: 400px;
+}
+
+.iconContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.completionIcon {
+  font-size: 120px;
+  animation: celebration 2s ease-in-out infinite alternate;
+}
+
+@keyframes celebration {
+  0% {
+    transform: scale(1) rotate(-5deg);
+  }
+  100% {
+    transform: scale(1.1) rotate(5deg);
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+  width: 100%;
+}
+
+.title {
+  color: var(--text-primary);
+  margin: 0;
+  font-size: var(--font-size-xxxl);
+}
+
+.subtitle {
+  color: var(--text-secondary);
+  line-height: 1.4;
+  margin: 0;
+}
+
+.selectionSummary {
+  background: linear-gradient(135deg, var(--color-success) 0%, #16a085 100%);
+  color: white;
+  padding: var(--spacing-lg);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.selectionText {
+  margin: 0;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.selectionHint {
+  margin: 0;
+  opacity: 0.9;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.noSelectionMessage {
+  background: var(--bg-secondary);
+  padding: var(--spacing-lg);
+  border-radius: var(--radius-xl);
+  border: 2px dashed var(--text-tertiary);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.noSelectionText {
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.noSelectionHint {
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+  align-items: center;
+  width: 100%;
+}
+
+.viewButton {
+  min-width: 220px;
+  height: 56px;
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-card);
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+  transition: all 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-card-hover);
+  }
+  
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+.thankYou {
+  color: var(--text-tertiary);
+  font-style: italic;
+  margin: 0;
+  opacity: 0.8;
+}
+
+// Mobile optimizations
+@media (max-width: 480px) {
+  .completionMessage {
+    padding: var(--spacing-lg);
+    gap: var(--spacing-lg);
+    min-height: 350px;
+  }
+  
+  .completionIcon {
+    font-size: 80px;
+  }
+  
+  .title {
+    font-size: var(--font-size-xxl);
+  }
+  
+  .subtitle {
+    font-size: var(--font-size-sm);
+  }
+  
+  .selectionSummary,
+  .noSelectionMessage {
+    padding: var(--spacing-md);
+  }
+  
+  .selectionText {
+    font-size: var(--font-size-base);
+  }
+  
+  .selectionHint,
+  .noSelectionHint {
+    font-size: var(--font-size-xs);
+  }
+  
+  .noSelectionText {
+    font-size: var(--font-size-sm);
+  }
+  
+  .viewButton {
+    min-width: 180px;
+    height: 48px;
+    font-size: var(--font-size-base);
+  }
+  
+  .thankYou {
+    font-size: var(--font-size-xs);
+  }
+}
+
+// Tablet adjustments
+@media (min-width: 481px) and (max-width: 768px) {
+  .completionMessage {
+    padding: var(--spacing-xl);
+  }
+  
+  .completionIcon {
+    font-size: 100px;
+  }
+}
+
+// Large screens
+@media (min-width: 769px) {
+  .completionMessage {
+    padding: var(--spacing-xxl);
+    max-width: 600px;
+  }
+  
+  .completionIcon {
+    font-size: 140px;
+  }
+  
+  .title {
+    font-size: 2.5rem;
+  }
+  
+  .viewButton {
+    min-width: 250px;
+    height: 64px;
+    font-size: var(--font-size-xl);
+  }
+}
+
+// High contrast mode
+@media (prefers-contrast: high) {
+  .selectionSummary {
+    background: var(--color-success);
+    border: 2px solid white;
+  }
+  
+  .noSelectionMessage {
+    border: 2px solid var(--text-primary);
+    background: var(--bg-primary);
+  }
+  
+  .viewButton {
+    background: var(--color-primary);
+    border: 2px solid white;
+  }
+}
+
+// Reduced motion
+@media (prefers-reduced-motion: reduce) {
+  .completionIcon {
+    animation: none;
+  }
+  
+  .viewButton {
+    transition: none;
+    
+    &:hover {
+      transform: none;
+    }
+    
+    &:active {
+      transform: none;
+    }
+  }
+}
+
+// Dark mode preparation
+@media (prefers-color-scheme: dark) {
+  .selectionText,
+  .selectionHint {
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  }
+}
+
+// Touch device optimizations
+@media (hover: none) and (pointer: coarse) {
+  .viewButton:hover {
+    transform: none;
+    box-shadow: var(--shadow-card);
+  }
+}
+
+// Focus styles for accessibility
+.viewButton:focus-visible {
+  outline: 3px solid white;
+  outline-offset: 2px;
+}
+
+// Loading animation variant
+.completionIcon.loading {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+// Success state enhancement
+.selectionSummary {
+  position: relative;
+  overflow: hidden;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+      45deg,
+      transparent,
+      rgba(255, 255, 255, 0.1),
+      transparent
+    );
+    animation: shimmer 3s ease-in-out infinite;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%) translateY(-100%) rotate(45deg);
+  }
+  50% {
+    transform: translateX(100%) translateY(100%) rotate(45deg);
+  }
+  100% {
+    transform: translateX(-100%) translateY(-100%) rotate(45deg);
+  }
+}
+
+// Print styles
+@media print {
+  .completionMessage {
+    background: white;
+    color: black;
+    page-break-inside: avoid;
+  }
+  
+  .completionIcon {
+    animation: none;
+  }
+  
+  .selectionSummary {
+    background: #f0f0f0;
+    color: black;
+    border: 1px solid #ccc;
+  }
+  
+  .viewButton {
+    display: none;
+  }
+}

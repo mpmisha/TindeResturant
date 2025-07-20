@@ -1,0 +1,134 @@
+{
+  "id": "local-bistro",
+  "name": "The Local Bistro",
+  "logo": "local-bistro-logo.png",
+  "phoneNumber": "+1-555-0789",
+  "dishes": [
+    {
+      "id": 1,
+      "name": "Craft Beer Flight",
+      "shortDescription": "Selection of four local craft beers",
+      "fullDescription": "A curated selection of four 4oz pours featuring our rotating taps of local craft breweries. Includes tasting notes and brewery information.",
+      "price": 16.99,
+      "category": "Drink",
+      "image": "beer-flight.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Fresh Lemonade",
+      "shortDescription": "House-made lemonade with fresh lemons",
+      "fullDescription": "Refreshing lemonade made with fresh-squeezed lemons, pure cane sugar, and sparkling water. Available in classic, strawberry, or lavender.",
+      "price": 4.99,
+      "category": "Drink",
+      "image": "fresh-lemonade.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Coffee of the Day",
+      "shortDescription": "Single-origin coffee, rotating selection",
+      "fullDescription": "Freshly roasted single-origin coffee beans from our featured roaster. Origin and tasting notes change weekly. Served black or with cream.",
+      "price": 3.50,
+      "category": "Drink",
+      "image": "coffee-day.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Loaded Nachos",
+      "shortDescription": "Crispy tortilla chips with all the fixings",
+      "fullDescription": "House-made tortilla chips topped with melted cheese, black beans, jalapeños, diced tomatoes, sour cream, and guacamole.",
+      "price": 12.99,
+      "category": "Starter",
+      "image": "loaded-nachos.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Buffalo Wings",
+      "shortDescription": "Crispy chicken wings with buffalo sauce",
+      "fullDescription": "Eight crispy chicken wings tossed in our signature buffalo sauce, served with celery sticks and blue cheese dressing.",
+      "price": 13.99,
+      "category": "Starter",
+      "image": "buffalo-wings.jpg"
+    },
+    {
+      "id": 6,
+      "name": "Caesar Salad",
+      "shortDescription": "Crisp romaine with parmesan and croutons",
+      "fullDescription": "Fresh romaine lettuce tossed in house-made Caesar dressing with shaved parmesan, anchovies, and garlic croutons.",
+      "price": 11.99,
+      "category": "Starter",
+      "image": "caesar-salad.jpg"
+    },
+    {
+      "id": 7,
+      "name": "Bistro Burger",
+      "shortDescription": "Grass-fed beef burger with local fixings",
+      "fullDescription": "8oz grass-fed beef patty with lettuce, tomato, red onion, and bistro sauce on a brioche bun. Served with hand-cut fries.",
+      "price": 17.99,
+      "category": "Main course",
+      "image": "bistro-burger.jpg"
+    },
+    {
+      "id": 8,
+      "name": "Pan-Seared Salmon",
+      "shortDescription": "Atlantic salmon with seasonal vegetables",
+      "fullDescription": "Fresh Atlantic salmon pan-seared with lemon herb butter, served with roasted seasonal vegetables and wild rice pilaf.",
+      "price": 24.99,
+      "category": "Main course",
+      "image": "pan-seared-salmon.jpg"
+    },
+    {
+      "id": 9,
+      "name": "Chicken Penne Pasta",
+      "shortDescription": "Grilled chicken with penne in creamy sauce",
+      "fullDescription": "Grilled chicken breast over penne pasta in a creamy garlic parmesan sauce with sun-dried tomatoes and fresh basil.",
+      "price": 19.99,
+      "category": "Main course",
+      "image": "chicken-penne.jpg"
+    },
+    {
+      "id": 10,
+      "name": "BBQ Ribs",
+      "shortDescription": "Slow-cooked pork ribs with house BBQ sauce",
+      "fullDescription": "Half rack of slow-cooked pork ribs glazed with our house-made BBQ sauce, served with coleslaw and baked beans.",
+      "price": 22.99,
+      "category": "Main course",
+      "image": "bbq-ribs.jpg"
+    },
+    {
+      "id": 11,
+      "name": "Vegetarian Wrap",
+      "shortDescription": "Grilled vegetables in a spinach tortilla",
+      "fullDescription": "Grilled zucchini, bell peppers, mushrooms, and onions with hummus and mixed greens in a spinach tortilla. Served with chips.",
+      "price": 14.99,
+      "category": "Main course",
+      "image": "vegetarian-wrap.jpg"
+    },
+    {
+      "id": 12,
+      "name": "Chocolate Lava Cake",
+      "shortDescription": "Warm chocolate cake with molten center",
+      "fullDescription": "Rich chocolate cake with a warm, molten chocolate center. Served with vanilla ice cream and fresh berries.",
+      "price": 8.99,
+      "category": "Desert",
+      "image": "chocolate-lava-cake.jpg"
+    },
+    {
+      "id": 13,
+      "name": "Apple Pie",
+      "shortDescription": "Classic American apple pie",
+      "fullDescription": "Traditional apple pie made with Granny Smith apples, cinnamon, and a flaky butter crust. Served warm with vanilla ice cream.",
+      "price": 7.99,
+      "category": "Desert",
+      "image": "apple-pie.jpg"
+    },
+    {
+      "id": 14,
+      "name": "Cheesecake",
+      "shortDescription": "New York style cheesecake",
+      "fullDescription": "Creamy New York style cheesecake with a graham cracker crust. Choice of strawberry, blueberry, or chocolate sauce.",
+      "price": 7.99,
+      "category": "Desert",
+      "image": "cheesecake.jpg"
+    }
+  ]
+}

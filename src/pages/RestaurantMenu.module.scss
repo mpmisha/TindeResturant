@@ -1,0 +1,79 @@
+.restaurantMenu {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+  overflow: hidden;
+}
+
+.mainContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+.loadingContainer {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-lg);
+  padding: var(--spacing-xl);
+  background: var(--bg-primary);
+}
+
+.errorContainer {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-md);
+  padding: var(--spacing-xl);
+  text-align: center;
+  background: var(--bg-primary);
+}
+
+.errorTitle {
+  color: var(--color-error);
+}
+
+.errorMessage {
+  color: var(--text-primary);
+  max-width: 400px;
+}
+
+.errorHint {
+  color: var(--text-secondary);
+  max-width: 350px;
+  margin-top: var(--spacing-sm);
+}
+
+// Responsive adjustments
+@media (max-width: 480px) {
+  .errorContainer {
+    padding: var(--spacing-lg);
+  }
+  
+  .errorMessage,
+  .errorHint {
+    max-width: 90%;
+  }
+}
+
+// High contrast mode
+@media (prefers-contrast: high) {
+  .restaurantMenu {
+    background: var(--bg-primary);
+  }
+}
+
+// Reduced motion
+@media (prefers-reduced-motion: reduce) {
+  .restaurantMenu {
+    background: var(--bg-primary);
+  }
+}

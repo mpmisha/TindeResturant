@@ -1,0 +1,125 @@
+{
+  "id": "bella-vista",
+  "name": "Bella Vista",
+  "logo": "bella-vista-logo.png",
+  "phoneNumber": "+1-555-0123",
+  "dishes": [
+    {
+      "id": 1,
+      "name": "Chianti Classico",
+      "shortDescription": "Full-bodied red wine from Tuscany",
+      "fullDescription": "A classic Chianti from the heart of Tuscany, aged in oak barrels for 18 months. Notes of cherry, plum, and subtle spices with a smooth finish.",
+      "price": 12.99,
+      "category": "Drink",
+      "image": "chianti-wine.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Italian Soda",
+      "shortDescription": "Refreshing sparkling water with fruit syrup",
+      "fullDescription": "House-made sparkling water with your choice of blood orange, lemon, or pomegranate syrup. Served with fresh citrus and ice.",
+      "price": 4.99,
+      "category": "Drink",
+      "image": "italian-soda.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Espresso",
+      "shortDescription": "Traditional Italian espresso",
+      "fullDescription": "Authentic Italian espresso made from freshly ground Arabica beans. Rich, bold flavor with a perfect crema on top.",
+      "price": 3.50,
+      "category": "Drink",
+      "image": "espresso.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Bruschetta al Pomodoro",
+      "shortDescription": "Toasted bread with fresh tomatoes and basil",
+      "fullDescription": "Crispy sourdough bread topped with ripe Roma tomatoes, fresh basil, garlic, and extra virgin olive oil. Finished with aged balsamic glaze.",
+      "price": 8.99,
+      "category": "Starter",
+      "image": "bruschetta.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Antipasto Classico",
+      "shortDescription": "Traditional Italian appetizer platter",
+      "fullDescription": "A selection of cured meats including prosciutto and salami, fresh mozzarella, marinated olives, roasted peppers, and artichoke hearts.",
+      "price": 16.99,
+      "category": "Starter",
+      "image": "antipasto.jpg"
+    },
+    {
+      "id": 6,
+      "name": "Caprese Salad",
+      "shortDescription": "Fresh mozzarella with tomatoes and basil",
+      "fullDescription": "Buffalo mozzarella, vine-ripened tomatoes, and fresh basil leaves drizzled with extra virgin olive oil and aged balsamic reduction.",
+      "price": 12.99,
+      "category": "Starter",
+      "image": "caprese.jpg"
+    },
+    {
+      "id": 7,
+      "name": "Spaghetti Carbonara",
+      "shortDescription": "Classic Roman pasta with eggs and pancetta",
+      "fullDescription": "Traditional spaghetti tossed with crispy pancetta, farm-fresh eggs, Pecorino Romano cheese, and freshly cracked black pepper.",
+      "price": 18.99,
+      "category": "Main course",
+      "image": "carbonara.jpg"
+    },
+    {
+      "id": 8,
+      "name": "Margherita Pizza",
+      "shortDescription": "Traditional pizza with tomato, mozzarella, and basil",
+      "fullDescription": "Wood-fired pizza with San Marzano tomato sauce, fresh mozzarella di bufala, fresh basil, and extra virgin olive oil on our signature sourdough crust.",
+      "price": 16.99,
+      "category": "Main course",
+      "image": "margherita-pizza.jpg"
+    },
+    {
+      "id": 9,
+      "name": "Osso Buco",
+      "shortDescription": "Braised veal shanks in wine sauce",
+      "fullDescription": "Tender veal shanks slow-braised in white wine with carrots, celery, onions, and herbs. Served with saffron risotto and gremolata.",
+      "price": 28.99,
+      "category": "Main course",
+      "image": "osso-buco.jpg"
+    },
+    {
+      "id": 10,
+      "name": "Seafood Risotto",
+      "shortDescription": "Creamy risotto with mixed seafood",
+      "fullDescription": "Arborio rice slowly cooked with fresh shrimp, mussels, calamari, and scallops in a saffron-infused seafood broth with white wine.",
+      "price": 24.99,
+      "category": "Main course",
+      "image": "seafood-risotto.jpg"
+    },
+    {
+      "id": 11,
+      "name": "Tiramisu",
+      "shortDescription": "Classic Italian coffee-flavored dessert",
+      "fullDescription": "Ladyfingers soaked in espresso and coffee liqueur, layered with mascarpone cheese mixture, and dusted with cocoa powder.",
+      "price": 8.99,
+      "category": "Desert",
+      "image": "tiramisu.jpg"
+    },
+    {
+      "id": 12,
+      "name": "Gelato Trio",
+      "shortDescription": "Three scoops of artisanal gelato",
+      "fullDescription": "Choose three flavors from our daily selection: vanilla bean, chocolate hazelnut, pistachio, strawberry, or lemon basil.",
+      "price": 7.99,
+      "category": "Desert",
+      "image": "gelato-trio.jpg"
+    },
+    {
+      "id": 13,
+      "name": "Cannoli Siciliani",
+      "shortDescription": "Traditional Sicilian pastry with ricotta filling",
+      "fullDescription": "Crispy pastry shells filled with sweet ricotta cheese mixed with candied fruits and chocolate chips, dusted with powdered sugar.",
+      "price": 6.99,
+      "category": "Desert",
+      "image": "cannoli.jpg"
+    }
+  ]
+}

@@ -1,0 +1,134 @@
+{
+  "id": "sakura-sushi",
+  "name": "Sakura Sushi",
+  "logo": "sakura-sushi-logo.png",
+  "phoneNumber": "+1-555-0456",
+  "dishes": [
+    {
+      "id": 1,
+      "name": "Sake Premium",
+      "shortDescription": "Premium Japanese rice wine",
+      "fullDescription": "Premium junmai sake from Niigata prefecture, served chilled. Clean, crisp flavor with subtle fruity notes and a smooth finish.",
+      "price": 14.99,
+      "category": "Drink",
+      "image": "sake.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Green Tea",
+      "shortDescription": "Traditional Japanese sencha tea",
+      "fullDescription": "High-quality sencha green tea from Shizuoka prefecture. Light, refreshing taste with grassy notes and natural sweetness.",
+      "price": 3.99,
+      "category": "Drink",
+      "image": "green-tea.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Ramune",
+      "shortDescription": "Japanese marble soda",
+      "fullDescription": "Traditional Japanese carbonated soft drink with a unique marble seal. Available in original, strawberry, or melon flavors.",
+      "price": 4.50,
+      "category": "Drink",
+      "image": "ramune.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Edamame",
+      "shortDescription": "Steamed young soybeans with sea salt",
+      "fullDescription": "Fresh edamame beans steamed to perfection and lightly salted with coarse sea salt. A healthy and traditional Japanese appetizer.",
+      "price": 6.99,
+      "category": "Starter",
+      "image": "edamame.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Gyoza",
+      "shortDescription": "Pan-fried pork dumplings",
+      "fullDescription": "Six handmade dumplings filled with seasoned ground pork and vegetables, pan-fried until golden and served with ponzu dipping sauce.",
+      "price": 9.99,
+      "category": "Starter",
+      "image": "gyoza.jpg"
+    },
+    {
+      "id": 6,
+      "name": "Miso Soup",
+      "shortDescription": "Traditional soybean paste soup",
+      "fullDescription": "Classic miso soup made with red miso paste, tofu cubes, wakame seaweed, and green onions. Served hot in a traditional bowl.",
+      "price": 4.99,
+      "category": "Starter",
+      "image": "miso-soup.jpg"
+    },
+    {
+      "id": 7,
+      "name": "Agedashi Tofu",
+      "shortDescription": "Lightly fried tofu in savory broth",
+      "fullDescription": "Soft tofu lightly dusted and fried, served in a warm dashi broth with grated daikon, ginger, and bonito flakes.",
+      "price": 8.99,
+      "category": "Starter",
+      "image": "agedashi-tofu.jpg"
+    },
+    {
+      "id": 8,
+      "name": "Salmon Sashimi",
+      "shortDescription": "Fresh sliced salmon",
+      "fullDescription": "Premium Atlantic salmon, expertly sliced and served with wasabi, pickled ginger, and soy sauce. Five pieces per order.",
+      "price": 16.99,
+      "category": "Main course",
+      "image": "salmon-sashimi.jpg"
+    },
+    {
+      "id": 9,
+      "name": "Chirashi Bowl",
+      "shortDescription": "Assorted sashimi over sushi rice",
+      "fullDescription": "Fresh assorted sashimi including tuna, salmon, yellowtail, and shrimp served over seasoned sushi rice with tamago and cucumber.",
+      "price": 22.99,
+      "category": "Main course",
+      "image": "chirashi-bowl.jpg"
+    },
+    {
+      "id": 10,
+      "name": "Tonkotsu Ramen",
+      "shortDescription": "Rich pork bone broth ramen",
+      "fullDescription": "Creamy tonkotsu broth simmered for 20 hours, served with fresh ramen noodles, chashu pork, soft-boiled egg, and green onions.",
+      "price": 18.99,
+      "category": "Main course",
+      "image": "tonkotsu-ramen.jpg"
+    },
+    {
+      "id": 11,
+      "name": "Dragon Roll",
+      "shortDescription": "Eel and avocado sushi roll",
+      "fullDescription": "Inside-out roll with shrimp tempura and cucumber, topped with grilled eel, avocado, and sweet eel sauce. Eight pieces.",
+      "price": 19.99,
+      "category": "Main course",
+      "image": "dragon-roll.jpg"
+    },
+    {
+      "id": 12,
+      "name": "Chicken Teriyaki",
+      "shortDescription": "Grilled chicken with teriyaki sauce",
+      "fullDescription": "Tender chicken thigh grilled to perfection and glazed with house-made teriyaki sauce. Served with steamed rice and vegetables.",
+      "price": 17.99,
+      "category": "Main course",
+      "image": "chicken-teriyaki.jpg"
+    },
+    {
+      "id": 13,
+      "name": "Mochi Ice Cream",
+      "shortDescription": "Sweet rice cake with ice cream",
+      "fullDescription": "Traditional mochi wrapped around premium ice cream. Choice of vanilla, green tea, red bean, or mango flavors. Three pieces.",
+      "price": 7.99,
+      "category": "Desert",
+      "image": "mochi-ice-cream.jpg"
+    },
+    {
+      "id": 14,
+      "name": "Dorayaki",
+      "shortDescription": "Pancake sandwich with sweet filling",
+      "fullDescription": "Two fluffy pancakes filled with sweet red bean paste (anko). A beloved Japanese confection, served with a dusting of powdered sugar.",
+      "price": 6.99,
+      "category": "Desert",
+      "image": "dorayaki.jpg"
+    }
+  ]
+}

@@ -1,0 +1,186 @@
+// Global styles for TindeRestaurant
+
+// CSS Reset and base styles
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+// Prevent overscroll and improve mobile experience
+body {
+  -webkit-overflow-scrolling: touch;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: #f8f9fa;
+}
+
+#root {
+  height: 100%;
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.app {
+  height: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+// Design tokens
+:root {
+  // Colors
+  --color-primary: #0078d4;
+  --color-primary-dark: #106ebe;
+  --color-secondary: #6c757d;
+  --color-success: #107c10;
+  --color-warning: #ff8c00;
+  --color-error: #d13438;
+  
+  // Backgrounds
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8f9fa;
+  --bg-tertiary: #e9ecef;
+  
+  // Text colors
+  --text-primary: #323130;
+  --text-secondary: #605e5c;
+  --text-tertiary: #8a8886;
+  
+  // Shadows
+  --shadow-card: 0 2px 8px rgba(0, 0, 0, 0.1);
+  --shadow-card-hover: 0 4px 16px rgba(0, 0, 0, 0.15);
+  --shadow-overlay: 0 8px 32px rgba(0, 0, 0, 0.2);
+  
+  // Border radius
+  --radius-small: 4px;
+  --radius-medium: 8px;
+  --radius-large: 12px;
+  --radius-xl: 16px;
+  
+  // Spacing
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-xxl: 48px;
+  
+  // Typography
+  --font-size-xs: 12px;
+  --font-size-sm: 14px;
+  --font-size-base: 16px;
+  --font-size-lg: 18px;
+  --font-size-xl: 20px;
+  --font-size-xxl: 24px;
+  --font-size-xxxl: 32px;
+  
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  
+  // Layout breakpoints
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 992px;
+  --breakpoint-xl: 1200px;
+  
+  // Z-index layers
+  --z-index-dropdown: 1000;
+  --z-index-sticky: 1020;
+  --z-index-fixed: 1030;
+  --z-index-modal-backdrop: 1040;
+  --z-index-modal: 1050;
+  --z-index-popover: 1060;
+  --z-index-tooltip: 1070;
+}
+
+// Utility classes
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+.no-scroll {
+  overflow: hidden;
+  height: 100vh;
+}
+
+// Touch and interaction improvements
+button, [role="button"] {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+// Focus styles for accessibility
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+// Smooth scrolling
+html {
+  scroll-behavior: smooth;
+}
+
+// Responsive typography
+@media (max-width: 480px) {
+  :root {
+    --font-size-xs: 11px;
+    --font-size-sm: 13px;
+    --font-size-base: 15px;
+    --font-size-lg: 17px;
+    --font-size-xl: 19px;
+    --font-size-xxl: 22px;
+    --font-size-xxxl: 28px;
+  }
+}
+
+// High contrast mode support
+@media (prefers-contrast: high) {
+  :root {
+    --shadow-card: 0 2px 8px rgba(0, 0, 0, 0.3);
+    --shadow-card-hover: 0 4px 16px rgba(0, 0, 0, 0.4);
+  }
+}
+
+// Reduced motion support
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+// Dark mode support (future enhancement)
+@media (prefers-color-scheme: dark) {
+  // Dark mode variables can be added here in the future
+}

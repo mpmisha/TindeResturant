@@ -1,0 +1,90 @@
+{
+  "name": "tinde-restaurant",
+  "version": "1.0.0",
+  "description": "A Tinder-like web application for selecting dishes from restaurant menus",
+  "main": "src/index.tsx",
+  "scripts": {
+    "dev": "npm run css:generate && webpack serve --mode development",
+    "serve": "webpack serve --mode development",
+    "build": "npm run css:generate && webpack --mode production",
+    "test": "jest",
+    "test:coverage": "jest --coverage",
+    "test:watch": "jest --watch",
+    "lint": "eslint src --ext .ts,.tsx",
+    "lint:fix": "eslint src --ext .ts,.tsx --fix",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build",
+    "css:generate": "tcm src --pattern 'src/**/*.module.scss' --watch",
+    "css:generate:once": "tcm src --pattern 'src/**/*.module.scss'"
+  },
+  "keywords": [
+    "react",
+    "typescript",
+    "restaurant",
+    "menu",
+    "tinder",
+    "swipe",
+    "mobile"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@fluentui/react-button": "^9.3.49",
+    "@fluentui/react-card": "^9.0.59",
+    "@fluentui/react-divider": "^9.2.54",
+    "@fluentui/react-image": "^9.1.44",
+    "@fluentui/react-provider": "^9.13.7",
+    "@fluentui/react-spinner": "^9.4.1",
+    "@fluentui/react-text": "^9.4.7",
+    "@fluentui/react-theme": "^9.1.16",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.8.0",
+    "recoil": "^0.7.7"
+  },
+  "devDependencies": {
+    "@storybook/addon-essentials": "^7.5.3",
+    "@storybook/react": "^7.5.3",
+    "@storybook/react-webpack5": "^7.5.3",
+    "@testing-library/jest-dom": "^6.1.5",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^14.5.1",
+    "@types/jest": "^29.5.8",
+    "@types/react": "^18.2.45",
+    "@types/react-dom": "^18.2.18",
+    "@typescript-eslint/eslint-plugin": "^6.13.1",
+    "@typescript-eslint/parser": "^6.13.1",
+    "css-loader": "^6.8.1",
+    "eslint": "^8.54.0",
+    "eslint-plugin-jsx-a11y": "^6.8.0",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "html-webpack-plugin": "^5.5.3",
+    "husky": "^8.0.3",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
+    "prettier": "^3.1.0",
+    "sass": "^1.69.5",
+    "sass-embedded": "^1.89.2",
+    "sass-loader": "^14.0.0",
+    "style-loader": "^3.3.3",
+    "ts-loader": "^9.5.1",
+    "typed-css-modules": "^0.9.1",
+    "typescript": "^5.3.2",
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

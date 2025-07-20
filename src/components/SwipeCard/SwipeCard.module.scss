@@ -1,0 +1,355 @@
+.swipeCard {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  cursor: grab;
+  
+  &.active {
+    cursor: grab;
+    
+    &:active {
+      cursor: grabbing;
+    }
+  }
+  
+  &:not(.active) {
+    pointer-events: none;
+  }
+}
+
+.card {
+  width: 100%;
+  height: 100%;
+  background: var(--bg-primary);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  
+  &:hover {
+    box-shadow: var(--shadow-card-hover);
+  }
+}
+
+.imageContainer {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  background: var(--bg-tertiary);
+  min-height: 60%;
+}
+
+.dishImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.3s ease;
+  
+  .active:hover & {
+    transform: scale(1.02);
+  }
+}
+
+.priceTag {
+  position: absolute;
+  top: var(--spacing-md);
+  right: var(--spacing-md);
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  border-radius: var(--radius-large);
+  padding: var(--spacing-xs) var(--spacing-md);
+  box-shadow: var(--shadow-card);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.price {
+  color: var(--color-primary);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-lg);
+}
+
+.content {
+  padding: var(--spacing-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  background: var(--bg-primary);
+  min-height: 40%;
+}
+
+.dishName {
+  color: var(--text-primary);
+  font-size: var(--font-size-xxl);
+  font-weight: var(--font-weight-bold);
+  line-height: 1.2;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.category {
+  margin: var(--spacing-xs) 0;
+}
+
+.categoryText {
+  color: var(--text-tertiary);
+  font-weight: var(--font-weight-medium);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: var(--font-size-xs);
+}
+
+.descriptionContainer {
+  flex: 1;
+  cursor: pointer;
+  padding: var(--spacing-sm);
+  border-radius: var(--radius-medium);
+  transition: background-color 0.2s ease;
+  
+  &:hover {
+    background: var(--bg-secondary);
+  }
+  
+  &:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+}
+
+.description {
+  color: var(--text-secondary);
+  line-height: 1.4;
+  margin: 0;
+  font-size: var(--font-size-base);
+  
+  &.expanded {
+    color: var(--text-primary);
+  }
+}
+
+.expandHint {
+  color: var(--text-tertiary);
+  font-style: italic;
+  margin-top: var(--spacing-xs);
+  font-size: var(--font-size-xs);
+  text-align: center;
+}
+
+// Swipe indicators
+.swipeIndicator {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-xs);
+  padding: var(--spacing-lg);
+  border-radius: var(--radius-large);
+  backdrop-filter: blur(10px);
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.leftIndicator {
+  left: var(--spacing-lg);
+  background: rgba(212, 52, 56, 0.9);
+  color: white;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.rightIndicator {
+  right: var(--spacing-lg);
+  background: rgba(16, 124, 16, 0.9);
+  color: white;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+// Stack positions
+.top {
+  z-index: 3;
+}
+
+.middle {
+  z-index: 2;
+  pointer-events: none;
+}
+
+.back {
+  z-index: 1;
+  pointer-events: none;
+}
+
+// Mobile optimizations
+@media (max-width: 480px) {
+  .content {
+    padding: var(--spacing-md);
+    gap: var(--spacing-xs);
+  }
+  
+  .dishName {
+    font-size: var(--font-size-xl);
+  }
+  
+  .price {
+    font-size: var(--font-size-base);
+  }
+  
+  .priceTag {
+    top: var(--spacing-sm);
+    right: var(--spacing-sm);
+    padding: var(--spacing-xs) var(--spacing-sm);
+  }
+  
+  .description {
+    font-size: var(--font-size-sm);
+  }
+  
+  .descriptionContainer {
+    padding: var(--spacing-xs);
+  }
+  
+  .swipeIndicator {
+    padding: var(--spacing-md);
+    
+    .Text {
+      font-size: var(--font-size-sm);
+    }
+  }
+  
+  .leftIndicator {
+    left: var(--spacing-sm);
+  }
+  
+  .rightIndicator {
+    right: var(--spacing-sm);
+  }
+}
+
+// Tablet adjustments
+@media (min-width: 481px) and (max-width: 768px) {
+  .content {
+    padding: var(--spacing-lg);
+  }
+  
+  .dishName {
+    font-size: var(--font-size-xxl);
+  }
+}
+
+// Large screens
+@media (min-width: 769px) {
+  .content {
+    padding: var(--spacing-xl);
+  }
+  
+  .dishName {
+    font-size: var(--font-size-xxxl);
+  }
+  
+  .price {
+    font-size: var(--font-size-xl);
+  }
+}
+
+// High contrast mode
+@media (prefers-contrast: high) {
+  .card {
+    border: 2px solid var(--text-primary);
+  }
+  
+  .priceTag {
+    background: var(--bg-primary);
+    border: 2px solid var(--color-primary);
+  }
+  
+  .swipeIndicator {
+    backdrop-filter: none;
+    border: 2px solid currentColor;
+  }
+  
+  .leftIndicator {
+    background: var(--color-error);
+  }
+  
+  .rightIndicator {
+    background: var(--color-success);
+  }
+}
+
+// Reduced motion
+@media (prefers-reduced-motion: reduce) {
+  .dishImage {
+    transition: none;
+  }
+  
+  .active:hover .dishImage {
+    transform: none;
+  }
+  
+  .descriptionContainer {
+    transition: none;
+  }
+  
+  .swipeIndicator {
+    transition: none;
+  }
+}
+
+// Touch device optimizations
+@media (hover: none) and (pointer: coarse) {
+  .card:hover {
+    box-shadow: var(--shadow-card);
+  }
+  
+  .descriptionContainer:hover {
+    background: transparent;
+  }
+  
+  .active:hover .dishImage {
+    transform: none;
+  }
+}
+
+// Accessibility improvements
+.swipeCard[aria-grabbed="true"] {
+  .card {
+    box-shadow: var(--shadow-overlay);
+    transform: scale(1.02);
+  }
+}
+
+// Loading state for images
+.dishImage[src=""] {
+  background: var(--bg-tertiary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  &::after {
+    content: "📷";
+    font-size: 48px;
+    opacity: 0.3;
+  }
+}
+
+// Error state styling
+.imageContainer:has(.dishImage[alt*="placeholder"]) {
+  background: linear-gradient(135deg, var(--bg-tertiary) 0%, var(--bg-secondary) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  &::before {
+    content: "🍽️";
+    font-size: 64px;
+    opacity: 0.5;
+    position: absolute;
+    z-index: 1;
+  }
+}

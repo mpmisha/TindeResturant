@@ -1,0 +1,116 @@
+.header {
+  background: var(--bg-primary);
+  border-bottom: 1px solid var(--bg-tertiary);
+  box-shadow: var(--shadow-card);
+  position: sticky;
+  top: 0;
+  z-index: var(--z-index-sticky);
+  padding: var(--spacing-md) 0;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  padding: 0 var(--spacing-lg);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.logoSection {
+  flex-shrink: 0;
+}
+
+.logoPlaceholder {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-card);
+}
+
+.logoText {
+  color: white;
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.restaurantInfo {
+  flex: 1;
+  min-width: 0; // Allow text truncation
+}
+
+.restaurantName {
+  color: var(--text-primary);
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  line-height: 1.2;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.phoneNumber {
+  color: var(--text-secondary);
+  font-size: var(--font-size-sm);
+  margin: var(--spacing-xs) 0 0 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+// Mobile optimizations
+@media (max-width: 480px) {
+  .container {
+    padding: 0 var(--spacing-md);
+    gap: var(--spacing-sm);
+  }
+  
+  .logoPlaceholder {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .logoText {
+    font-size: var(--font-size-base);
+  }
+  
+  .restaurantName {
+    font-size: var(--font-size-lg);
+  }
+  
+  .phoneNumber {
+    font-size: var(--font-size-xs);
+  }
+}
+
+// Tablet adjustments
+@media (min-width: 481px) and (max-width: 768px) {
+  .container {
+    padding: 0 var(--spacing-lg);
+  }
+}
+
+// High contrast mode
+@media (prefers-contrast: high) {
+  .header {
+    border-bottom: 2px solid var(--text-primary);
+  }
+  
+  .logoPlaceholder {
+    background: var(--text-primary);
+    border: 2px solid var(--bg-primary);
+  }
+}
+
+// Dark mode preparation
+@media (prefers-color-scheme: dark) {
+  .logoText {
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  }
+}

@@ -1,0 +1,230 @@
+.swipeInterface {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: var(--spacing-lg) var(--spacing-md);
+  max-width: 600px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.progressSection {
+  text-align: center;
+  margin-bottom: var(--spacing-md);
+}
+
+.progressText {
+  color: var(--text-secondary);
+  font-weight: var(--font-weight-medium);
+}
+
+.cardContainer {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  min-height: 0;
+  padding: var(--spacing-lg) 0;
+}
+
+.cardStack {
+  position: relative;
+  width: 100%;
+  max-width: 350px;
+  height: 500px;
+  perspective: 1000px;
+}
+
+.topCard {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 3;
+  transform: translateZ(0);
+}
+
+.middleCard {
+  position: absolute;
+  top: 8px;
+  left: 4px;
+  right: 4px;
+  bottom: -8px;
+  z-index: 2;
+  transform: scale(0.95) translateZ(-10px);
+  opacity: 0.8;
+}
+
+.backCard {
+  position: absolute;
+  top: 16px;
+  left: 8px;
+  right: 8px;
+  bottom: -16px;
+  z-index: 1;
+  transform: scale(0.9) translateZ(-20px);
+  opacity: 0.6;
+}
+
+.actionSection {
+  padding-top: var(--spacing-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+  align-items: center;
+}
+
+.doneButton {
+  min-width: 200px;
+  height: 48px;
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  border-radius: var(--radius-large);
+  box-shadow: var(--shadow-card);
+  
+  &:hover {
+    box-shadow: var(--shadow-card-hover);
+    transform: translateY(-1px);
+  }
+  
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+.swipeHints {
+  display: flex;
+  gap: var(--spacing-xxl);
+  align-items: center;
+}
+
+.hintItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+.swipeIcon {
+  font-size: 32px;
+  opacity: 0.7;
+  user-select: none;
+}
+
+.hintText {
+  color: var(--text-tertiary);
+  font-weight: var(--font-weight-medium);
+  text-align: center;
+}
+
+.emptyState {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-md);
+  text-align: center;
+  padding: var(--spacing-xl);
+}
+
+.emptyTitle {
+  color: var(--text-primary);
+}
+
+.emptyMessage {
+  color: var(--text-secondary);
+  max-width: 300px;
+}
+
+// Mobile optimizations
+@media (max-width: 480px) {
+  .swipeInterface {
+    padding: var(--spacing-md) var(--spacing-sm);
+  }
+  
+  .cardStack {
+    max-width: 320px;
+    height: 450px;
+  }
+  
+  .actionSection {
+    padding-top: var(--spacing-md);
+    gap: var(--spacing-md);
+  }
+  
+  .doneButton {
+    min-width: 180px;
+    height: 44px;
+    font-size: var(--font-size-base);
+  }
+  
+  .swipeHints {
+    gap: var(--spacing-xl);
+  }
+  
+  .swipeIcon {
+    font-size: 28px;
+  }
+  
+  .hintText {
+    font-size: var(--font-size-xs);
+  }
+}
+
+// Tablet adjustments
+@media (min-width: 481px) and (max-width: 768px) {
+  .cardStack {
+    max-width: 380px;
+    height: 520px;
+  }
+}
+
+// Large screens
+@media (min-width: 769px) {
+  .swipeInterface {
+    padding: var(--spacing-xl) var(--spacing-lg);
+  }
+  
+  .cardStack {
+    max-width: 400px;
+    height: 550px;
+  }
+}
+
+// High contrast mode
+@media (prefers-contrast: high) {
+  .middleCard,
+  .backCard {
+    opacity: 1;
+    border: 1px solid var(--text-secondary);
+  }
+}
+
+// Reduced motion
+@media (prefers-reduced-motion: reduce) {
+  .doneButton {
+    &:hover {
+      transform: none;
+    }
+    
+    &:active {
+      transform: none;
+    }
+  }
+  
+  .topCard,
+  .middleCard,
+  .backCard {
+    transition: none;
+  }
+}
+
+// Focus styles for accessibility
+.doneButton:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
