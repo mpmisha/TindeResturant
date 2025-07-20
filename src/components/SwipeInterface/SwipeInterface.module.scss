@@ -43,28 +43,31 @@
   bottom: 0;
   z-index: 3;
   transform: translateZ(0);
+  transition: none !important;
 }
 
 .middleCard {
   position: absolute;
-  top: 8px;
-  left: 4px;
-  right: 4px;
-  bottom: -8px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   z-index: 2;
-  transform: scale(0.95) translateZ(-10px);
+  transform: translateZ(-10px);
   opacity: 0.8;
+  transition: none !important;
 }
 
 .backCard {
   position: absolute;
-  top: 16px;
-  left: 8px;
-  right: 8px;
-  bottom: -16px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   z-index: 1;
-  transform: scale(0.9) translateZ(-20px);
+  transform: translateZ(-20px);
   opacity: 0.6;
+  transition: none !important;
 }
 
 
