@@ -1,12 +1,10 @@
 import React from 'react';
-import { useRecoilValue, useSetRecoilState } from 'recoil';
-import { Button } from '@fluentui/react-button';
+import { useRecoilValue } from 'recoil';
 import { Text } from '@fluentui/react-text';
 import { 
   orderedDishesState,
   currentCardIndexState,
-  remainingDishesCountState,
-  showSummaryState
+  remainingDishesCountState
 } from '../../state/restaurantState';
 import SwipeCard from '../SwipeCard/SwipeCard';
 import styles from './SwipeInterface.module.scss';
@@ -15,11 +13,6 @@ const SwipeInterface: React.FC = () => {
   const dishes = useRecoilValue(orderedDishesState);
   const currentIndex = useRecoilValue(currentCardIndexState);
   const remainingCount = useRecoilValue(remainingDishesCountState);
-  const setShowSummary = useSetRecoilState(showSummaryState);
-
-  const handleImDone = () => {
-    setShowSummary(true);
-  };
 
   if (dishes.length === 0) {
     return (
@@ -81,28 +74,6 @@ const SwipeInterface: React.FC = () => {
               />
             </div>
           )}
-        </div>
-      </div>
-
-      <div className={styles.actionSection}>
-        <Button 
-          appearance="primary" 
-          size="large"
-          onClick={handleImDone}
-          className={styles.doneButton}
-        >
-          I'm Done
-        </Button>
-        
-        <div className={styles.swipeHints}>
-          <div className={styles.hintItem}>
-            <div className={styles.swipeIcon}>👈</div>
-            <Text size={200} className={styles.hintText}>Don't want</Text>
-          </div>
-          <div className={styles.hintItem}>
-            <div className={styles.swipeIcon}>👉</div>
-            <Text size={200} className={styles.hintText}>Want this!</Text>
-          </div>
         </div>
       </div>
     </div>

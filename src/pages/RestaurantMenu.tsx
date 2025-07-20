@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { useRecoilState, useRecoilValue, useSetRecoilState } from 'recoil';
 import { Spinner } from '@fluentui/react-spinner';
 import { Text } from '@fluentui/react-text';
+import { Button } from '@fluentui/react-button';
 import { 
   restaurantState, 
   showSummaryState, 
@@ -93,7 +94,9 @@ const RestaurantMenu: React.FC = () => {
 
   return (
     <div className={styles.restaurantMenu}>
-      <RestaurantHeader restaurant={restaurant} />
+      <div className={styles.headerSection}>
+        <RestaurantHeader restaurant={restaurant} />
+      </div>
       
       <main className={styles.mainContent}>
         {showSummary ? (
@@ -104,6 +107,19 @@ const RestaurantMenu: React.FC = () => {
           <SwipeInterface />
         )}
       </main>
+
+      {!showSummary && !isMenuComplete && (
+        <footer className={styles.footerSection}>
+          <Button 
+            appearance="primary" 
+            size="large"
+            onClick={() => setShowSummary(true)}
+            className={styles.doneButton}
+          >
+            Done
+          </Button>
+        </footer>
+      )}
     </div>
   );
 };
