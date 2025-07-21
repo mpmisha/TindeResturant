@@ -70,9 +70,6 @@ const SummaryView: React.FC = () => {
         <Text size={600} weight="bold" className={styles.title}>
           Your Selection
         </Text>
-        <Text size={400} className={styles.subtitle}>
-          {selectedDishes.length} dish{selectedDishes.length !== 1 ? 'es' : ''} selected from {restaurant?.name}
-        </Text>
       </div>
 
       <div className={styles.itemsList}>
