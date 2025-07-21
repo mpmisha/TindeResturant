@@ -4,7 +4,8 @@ import { Text } from '@fluentui/react-text';
 import { Card } from '@fluentui/react-card';
 import { 
   currentCardIndexState, 
-  selectedDishesState 
+  selectedDishesState,
+  restaurantState 
 } from '../../state/restaurantState';
 import { Dish, SwipeDirection } from '../../types/restaurant';
 import { getImageWithFallback, formatPrice } from '../../utils/restaurantLoader';
@@ -38,6 +39,7 @@ const SwipeCard: React.FC<SwipeCardProps> = ({ dish, isActive, stackPosition }) 
   const cardRef = useRef<HTMLDivElement>(null);
   const setCurrentCardIndex = useSetRecoilState(currentCardIndexState);
   const setSelectedDishes = useSetRecoilState(selectedDishesState);
+  const restaurant = useRecoilValue(restaurantState);
 
   const SWIPE_THRESHOLD = 100; // pixels
   const ROTATION_FACTOR = 0.1; // degrees per pixel
@@ -155,14 +157,14 @@ const SwipeCard: React.FC<SwipeCardProps> = ({ dish, isActive, stackPosition }) 
       <Card className={styles.card}>
         <div className={styles.imageContainer}>
           <img 
-            src={getImageWithFallback(dish.image)}
+            src={getImageWithFallback(dish.image, restaurant?.id)}
             alt={dish.name}
             className={styles.dishImage}
             onError={(e) => {
               const img = e.target as HTMLImageElement;
               // Prevent infinite error loops by only setting fallback once
               if (!img.src.includes('placeholder')) {
-                img.src = getImageWithFallback('');
+                img.src = getImageWithFallback('', restaurant?.id);
               }
             }}
           />

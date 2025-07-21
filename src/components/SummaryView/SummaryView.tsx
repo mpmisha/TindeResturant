@@ -50,11 +50,11 @@ const SummaryView: React.FC = () => {
             <div className={styles.dishItem}>
               <div className={styles.dishImageContainer}>
                 <img 
-                  src={getImageWithFallback(dish.image)}
+                  src={getImageWithFallback(dish.image, restaurant?.id)}
                   alt={dish.name}
                   className={styles.dishImage}
                   onError={(e) => {
-                    (e.target as HTMLImageElement).src = getImageWithFallback('');
+                    (e.target as HTMLImageElement).src = getImageWithFallback('', restaurant?.id);
                   }}
                 />
               </div>

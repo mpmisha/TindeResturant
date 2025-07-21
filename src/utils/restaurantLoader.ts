@@ -39,17 +39,21 @@ export const getAvailableRestaurants = (): string[] => {
 /**
  * Get image path with fallback to placeholder
  * @param imagePath - Original image path
+ * @param restaurantId - Restaurant identifier for constructing the full path
  * @returns Image path or placeholder if image doesn't exist
  */
-export const getImageWithFallback = (imagePath: string): string => {
+export const getImageWithFallback = (imagePath: string, restaurantId?: string): string => {
   if (!imagePath || imagePath.trim() === '') {
     return PLACEHOLDER_IMAGE;
   }
   
-  // Since dish images don't exist yet, always return placeholder for now
-  // When you add actual dish images to public/images/dishes/, 
-  // change this to: return `/images/dishes/${imagePath}`;
-  return PLACEHOLDER_IMAGE;
+  // If no restaurant ID provided, return placeholder
+  if (!restaurantId) {
+    return PLACEHOLDER_IMAGE;
+  }
+  
+  // Construct the full path: /images/dishes/<restaurant_name>/<image_path>
+  return `/images/dishes/${restaurantId}/${imagePath}`;
 };
 
 /**
