@@ -5,7 +5,8 @@ import { Card } from '@fluentui/react-card';
 import { 
   currentCardIndexState, 
   selectedDishesState,
-  restaurantState 
+  restaurantState,
+  isEditingCategoryState
 } from '../../state/restaurantState';
 import { Dish, SwipeDirection } from '../../types/restaurant';
 import { getImageWithFallback, formatPrice } from '../../utils/restaurantLoader';
@@ -40,6 +41,8 @@ const SwipeCard: React.FC<SwipeCardProps> = ({ dish, isActive, stackPosition }) 
   const setCurrentCardIndex = useSetRecoilState(currentCardIndexState);
   const setSelectedDishes = useSetRecoilState(selectedDishesState);
   const restaurant = useRecoilValue(restaurantState);
+  const selectedDishes = useRecoilValue(selectedDishesState);
+  const isEditingCategory = useRecoilValue(isEditingCategoryState);
 
   const SWIPE_THRESHOLD = 100; // pixels
   const ROTATION_FACTOR = 0.1; // degrees per pixel
@@ -96,9 +99,19 @@ const SwipeCard: React.FC<SwipeCardProps> = ({ dish, isActive, stackPosition }) 
     
     setIsAnimating(true);
     
-    // Add to selected dishes if swiped right (want)
+    // Check if dish is currently selected
+    const isDishSelected = selectedDishes.some(selectedDish => selectedDish.id === dish.id);
+    
     if (direction === 'right') {
-      setSelectedDishes(prev => [...prev, dish]);
+      // Add to selected dishes if swiped right (want) and not already selected
+      if (!isDishSelected) {
+        setSelectedDishes(prev => [...prev, dish]);
+      }
+    } else if (direction === 'left') {
+      // Remove from selected dishes if swiped left (don't want) and currently selected
+      if (isDishSelected) {
+        setSelectedDishes(prev => prev.filter(selectedDish => selectedDish.id !== dish.id));
+      }
     }
     
     // Animate card off screen
@@ -121,13 +134,17 @@ const SwipeCard: React.FC<SwipeCardProps> = ({ dish, isActive, stackPosition }) 
       });
       setIsAnimating(false);
     }, 300);
-  }, [dish, setCurrentCardIndex, setSelectedDishes, isAnimating]);
+  }, [dish, setCurrentCardIndex, setSelectedDishes, isAnimating, selectedDishes]);
 
   const toggleDescription = useCallback(() => {
     if (isActive) {
       setShowFullDescription(prev => !prev);
     }
   }, [isActive]);
+
+  // Check if this dish is already selected
+  const isDishSelected = selectedDishes.some(selectedDish => selectedDish.id === dish.id);
+  const selectedCount = selectedDishes.filter(selectedDish => selectedDish.id === dish.id).length;
 
   // Calculate transform based on touch state
   const deltaX = touchState.currentX - touchState.startX;
@@ -154,7 +171,7 @@ const SwipeCard: React.FC<SwipeCardProps> = ({ dish, isActive, stackPosition }) 
       onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}
     >
-      <Card className={styles.card}>
+      <Card className={`${styles.card} ${isDishSelected ? styles.selected : ''}`}>
         <div className={styles.imageContainer}>
           <img 
             src={getImageWithFallback(dish.image, restaurant?.id)}
@@ -173,6 +190,13 @@ const SwipeCard: React.FC<SwipeCardProps> = ({ dish, isActive, stackPosition }) 
               {formatPrice(dish.price)}
             </Text>
           </div>
+          {isDishSelected && (
+            <div className={styles.selectedIndicator}>
+              <Text size={300} weight="semibold" className={styles.selectedText}>
+                Selected {selectedCount > 1 ? `(${selectedCount})` : ''}
+              </Text>
+            </div>
+          )}
         </div>
         
         <div className={styles.content}>

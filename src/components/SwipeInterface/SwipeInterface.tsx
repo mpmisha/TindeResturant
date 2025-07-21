@@ -4,7 +4,9 @@ import { Text } from '@fluentui/react-text';
 import { 
   orderedDishesState,
   currentCardIndexState,
-  remainingDishesCountState
+  remainingDishesCountState,
+  editingCategoryState,
+  isEditingCategoryState
 } from '../../state/restaurantState';
 import SwipeCard from '../SwipeCard/SwipeCard';
 import styles from './SwipeInterface.module.scss';
@@ -13,6 +15,8 @@ const SwipeInterface: React.FC = () => {
   const dishes = useRecoilValue(orderedDishesState);
   const currentIndex = useRecoilValue(currentCardIndexState);
   const remainingCount = useRecoilValue(remainingDishesCountState);
+  const editingCategory = useRecoilValue(editingCategoryState);
+  const isEditingCategory = useRecoilValue(isEditingCategoryState);
 
   if (dishes.length === 0) {
     return (
@@ -36,7 +40,10 @@ const SwipeInterface: React.FC = () => {
     <div className={styles.swipeInterface}>
       <div className={styles.progressSection}>
         <Text size={300} className={styles.progressText}>
-          {remainingCount} dish{remainingCount !== 1 ? 'es' : ''} remaining
+          {isEditingCategory 
+            ? `Editing ${editingCategory}: ${remainingCount} dish${remainingCount !== 1 ? 'es' : ''} remaining`
+            : `${remainingCount} dish${remainingCount !== 1 ? 'es' : ''} remaining`
+          }
         </Text>
       </div>
 

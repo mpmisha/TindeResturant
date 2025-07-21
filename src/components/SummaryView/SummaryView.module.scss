@@ -46,6 +46,12 @@
   margin-bottom: var(--spacing-sm);
 }
 
+.categoryInfo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
 .categoryTitle {
   color: var(--text-primary);
   text-transform: capitalize;
@@ -56,6 +62,24 @@
   color: var(--text-tertiary);
   font-weight: var(--font-weight-medium);
   margin: 0;
+}
+
+.editButton {
+  min-width: 32px;
+  height: 32px;
+  border-radius: var(--radius-medium);
+  color: var(--text-secondary);
+  transition: all 0.2s ease;
+  
+  &:hover {
+    color: var(--color-primary);
+    background-color: var(--bg-tertiary);
+  }
+  
+  &:focus {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
 }
 
 .categoryItems {
@@ -80,6 +104,7 @@
   display: flex;
   align-items: center;
   gap: var(--spacing-md);
+  position: relative;
 }
 
 .dishImageContainer {
@@ -139,6 +164,40 @@
 .price {
   color: var(--color-primary);
   font-weight: var(--font-weight-bold);
+}
+
+.removeButton {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  min-width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: var(--bg-primary);
+  color: var(--text-secondary);
+  border: 1px solid var(--text-tertiary);
+  transition: all 0.2s ease;
+  opacity: 0;
+  transform: scale(0.8);
+  
+  &:hover {
+    color: var(--color-danger, #d13438);
+    background-color: var(--bg-danger-subtle, #fef2f2);
+    border-color: var(--color-danger, #d13438);
+    transform: scale(1);
+  }
+  
+  &:focus {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.dishCard:hover .removeButton {
+  opacity: 1;
+  transform: scale(1);
 }
 
 .footer {

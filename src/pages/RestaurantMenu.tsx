@@ -9,7 +9,9 @@ import {
   showSummaryState, 
   isMenuCompleteState,
   currentCardIndexState,
-  selectedDishesState
+  selectedDishesState,
+  editingCategoryState,
+  isEditingCategoryState
 } from '../state/restaurantState';
 import { loadRestaurant } from '../utils/restaurantLoader';
 import RestaurantHeader from '../components/RestaurantHeader/RestaurantHeader';
@@ -25,11 +27,22 @@ const RestaurantMenu: React.FC = () => {
   const [error, setError] = useState<string | null>(null);
   const showSummary = useRecoilValue(showSummaryState);
   const isMenuComplete = useRecoilValue(isMenuCompleteState);
+  const isEditingCategory = useRecoilValue(isEditingCategoryState);
   
   // State reset functions
   const setCurrentCardIndex = useSetRecoilState(currentCardIndexState);
   const setSelectedDishes = useSetRecoilState(selectedDishesState);
   const setShowSummary = useSetRecoilState(showSummaryState);
+  const setEditingCategory = useSetRecoilState(editingCategoryState);
+
+  // Handle category editing completion
+  useEffect(() => {
+    if (isMenuComplete && isEditingCategory) {
+      // When category editing is complete, return to summary
+      setEditingCategory(null);
+      setShowSummary(true);
+    }
+  }, [isMenuComplete, isEditingCategory, setEditingCategory, setShowSummary]);
 
   useEffect(() => {
     const loadRestaurantData = async () => {
@@ -47,6 +60,7 @@ const RestaurantMenu: React.FC = () => {
         setCurrentCardIndex(0);
         setSelectedDishes([]);
         setShowSummary(false);
+        setEditingCategory(null);
         
         const restaurantData = await loadRestaurant(restaurantId);
         
@@ -66,7 +80,7 @@ const RestaurantMenu: React.FC = () => {
     };
 
     loadRestaurantData();
-  }, [restaurantId, setCurrentCardIndex, setSelectedDishes, setShowSummary, setRestaurant]);
+  }, [restaurantId, setCurrentCardIndex, setSelectedDishes, setShowSummary, setEditingCategory, setRestaurant]);
 
   if (loading) {
     return (
@@ -101,7 +115,7 @@ const RestaurantMenu: React.FC = () => {
       <main className={styles.mainContent}>
         {showSummary ? (
           <SummaryView />
-        ) : isMenuComplete ? (
+        ) : isMenuComplete && !isEditingCategory ? (
           <CompletionMessage />
         ) : (
           <SwipeInterface />

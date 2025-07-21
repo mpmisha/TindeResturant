@@ -6,8 +6,10 @@ export interface Styles {
   itemsList: string;
   categorySection: string;
   categoryHeader: string;
+  categoryInfo: string;
   categoryTitle: string;
   categoryCount: string;
+  editButton: string;
   categoryItems: string;
   dishCard: string;
   dishItem: string;
@@ -19,6 +21,7 @@ export interface Styles {
   dishDescription: string;
   dishPrice: string;
   price: string;
+  removeButton: string;
   footer: string;
   divider: string;
   totalSection: string;

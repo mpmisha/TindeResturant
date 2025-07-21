@@ -2,9 +2,12 @@ export interface Styles {
   swipeCard: string;
   active: string;
   card: string;
+  selected: string;
   imageContainer: string;
   dishImage: string;
   priceTag: string;
+  selectedIndicator: string;
+  selectedText: string;
   price: string;
   content: string;
   dishName: string;

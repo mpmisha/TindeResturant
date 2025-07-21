@@ -25,16 +25,31 @@ export const showSummaryState = atom<boolean>({
   default: false,
 });
 
+// Category being edited (null when not in edit mode)
+export const editingCategoryState = atom<string | null>({
+  key: 'editingCategoryState',
+  default: null,
+});
+
 // Dishes ordered by category (Drink -> Starter -> Main course -> Desert -> Other)
 export const orderedDishesState = selector<Dish[]>({
   key: 'orderedDishesState',
   get: ({ get }) => {
     const restaurant = get(restaurantState);
+    const editingCategory = get(editingCategoryState);
+    
     if (!restaurant || !restaurant.dishes) return [];
+
+    let dishes = [...restaurant.dishes];
+    
+    // If we're editing a specific category, filter to only that category
+    if (editingCategory) {
+      dishes = dishes.filter(dish => dish.category === editingCategory);
+    }
 
     const categoryOrder = ['Drink', 'Starter', 'Main course', 'Desert', 'Other'];
     
-    return [...restaurant.dishes].sort((a, b) => {
+    return dishes.sort((a, b) => {
       const aIndex = categoryOrder.indexOf(a.category);
       const bIndex = categoryOrder.indexOf(b.category);
       
@@ -91,5 +106,14 @@ export const remainingDishesCountState = selector<number>({
     const currentIndex = get(currentCardIndexState);
     
     return Math.max(0, dishes.length - currentIndex);
+  },
+});
+
+// Check if we're currently in category edit mode
+export const isEditingCategoryState = selector<boolean>({
+  key: 'isEditingCategoryState',
+  get: ({ get }) => {
+    const editingCategory = get(editingCategoryState);
+    return editingCategory !== null;
   },
 });
