@@ -29,6 +29,38 @@
   margin-bottom: var(--spacing-lg);
   display: flex;
   flex-direction: column;
+  gap: var(--spacing-xl);
+}
+
+.categorySection {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.categoryHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 var(--spacing-xs);
+  margin-bottom: var(--spacing-sm);
+}
+
+.categoryTitle {
+  color: var(--text-primary);
+  text-transform: capitalize;
+  margin: 0;
+}
+
+.categoryCount {
+  color: var(--text-tertiary);
+  font-weight: var(--font-weight-medium);
+  margin: 0;
+}
+
+.categoryItems {
+  display: flex;
+  flex-direction: column;
   gap: var(--spacing-md);
 }
 

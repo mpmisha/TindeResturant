@@ -33,6 +33,37 @@ const SummaryView: React.FC = () => {
     );
   }
 
+  // Group dishes by category
+  const dishesByCategory = selectedDishes.reduce((acc, dish) => {
+    const category = dish.category;
+    if (!acc[category]) {
+      acc[category] = [];
+    }
+    acc[category].push(dish);
+    return acc;
+  }, {} as Record<string, typeof selectedDishes>);
+
+  // Define the logical order for categories (meal flow order)
+  const categoryOrder = ['Starter', 'Main course', 'Desert', 'Drink'];
+  
+  // Get categories in logical meal order
+  const categories = Object.keys(dishesByCategory).sort((a, b) => {
+    const indexA = categoryOrder.indexOf(a);
+    const indexB = categoryOrder.indexOf(b);
+    
+    // If both categories are in the predefined order, sort by their position
+    if (indexA !== -1 && indexB !== -1) {
+      return indexA - indexB;
+    }
+    
+    // If only one category is in the predefined order, prioritize it
+    if (indexA !== -1) return -1;
+    if (indexB !== -1) return 1;
+    
+    // If neither category is in the predefined order, sort alphabetically
+    return a.localeCompare(b);
+  });
+
   return (
     <div className={styles.summaryView}>
       <div className={styles.header}>
@@ -45,39 +76,51 @@ const SummaryView: React.FC = () => {
       </div>
 
       <div className={styles.itemsList}>
-        {selectedDishes.map((dish, index) => (
-          <Card key={`${dish.id}-${index}`} className={styles.dishCard}>
-            <div className={styles.dishItem}>
-              <div className={styles.dishImageContainer}>
-                <img 
-                  src={getImageWithFallback(dish.image, restaurant?.id)}
-                  alt={dish.name}
-                  className={styles.dishImage}
-                  onError={(e) => {
-                    (e.target as HTMLImageElement).src = getImageWithFallback('', restaurant?.id);
-                  }}
-                />
-              </div>
-              
-              <div className={styles.dishInfo}>
-                <Text size={400} weight="semibold" className={styles.dishName}>
-                  {dish.name}
-                </Text>
-                <Text size={200} className={styles.dishCategory}>
-                  {dish.category}
-                </Text>
-                <Text size={300} className={styles.dishDescription}>
-                  {dish.shortDescription}
-                </Text>
-              </div>
-              
-              <div className={styles.dishPrice}>
-                <Text size={500} weight="semibold" className={styles.price}>
-                  {formatPrice(dish.price)}
-                </Text>
-              </div>
+        {categories.map((category) => (
+          <div key={category} className={styles.categorySection}>
+            <div className={styles.categoryHeader}>
+              <Text size={500} weight="bold" className={styles.categoryTitle}>
+                {category}
+              </Text>
+              <Text size={300} className={styles.categoryCount}>
+                {dishesByCategory[category].length} item{dishesByCategory[category].length !== 1 ? 's' : ''}
+              </Text>
             </div>
-          </Card>
+            
+            <div className={styles.categoryItems}>
+              {dishesByCategory[category].map((dish, index) => (
+                <Card key={`${dish.id}-${index}`} className={styles.dishCard}>
+                  <div className={styles.dishItem}>
+                    <div className={styles.dishImageContainer}>
+                      <img 
+                        src={getImageWithFallback(dish.image, restaurant?.id)}
+                        alt={dish.name}
+                        className={styles.dishImage}
+                        onError={(e) => {
+                          (e.target as HTMLImageElement).src = getImageWithFallback('', restaurant?.id);
+                        }}
+                      />
+                    </div>
+                    
+                    <div className={styles.dishInfo}>
+                      <Text size={400} weight="semibold" className={styles.dishName}>
+                        {dish.name}
+                      </Text>
+                      <Text size={300} className={styles.dishDescription}>
+                        {dish.shortDescription}
+                      </Text>
+                    </div>
+                    
+                    <div className={styles.dishPrice}>
+                      <Text size={500} weight="semibold" className={styles.price}>
+                        {formatPrice(dish.price)}
+                      </Text>
+                    </div>
+                  </div>
+                </Card>
+              ))}
+            </div>
+          </div>
         ))}
       </div>
 

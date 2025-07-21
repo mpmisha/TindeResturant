@@ -4,6 +4,11 @@ export interface Styles {
   title: string;
   subtitle: string;
   itemsList: string;
+  categorySection: string;
+  categoryHeader: string;
+  categoryTitle: string;
+  categoryCount: string;
+  categoryItems: string;
   dishCard: string;
   dishItem: string;
   dishImageContainer: string;

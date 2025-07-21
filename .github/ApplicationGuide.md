@@ -70,7 +70,7 @@ interface Dish {
   shortDescription: string;
   fullDescription: string;
   price: number;
-  category: "Drink" | "Main course" | "Starter" | "Desert" | "Other";
+  category: "Drink" | "Starter" | "Main course" | "Desert" | "Other";
   image: string;
 }
 ```
