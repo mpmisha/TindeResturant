@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = (env, argv) => {
   const isProduction = argv.mode === 'production';
@@ -10,7 +11,7 @@ module.exports = (env, argv) => {
       path: path.resolve(__dirname, 'dist'),
       filename: isProduction ? '[name].[contenthash].js' : '[name].js',
       clean: true,
-      publicPath: '/',
+      publicPath: isProduction ? '/TindeResturant/' : '/',
     },
     resolve: {
       extensions: ['.tsx', '.ts', '.js', '.jsx'],
@@ -83,6 +84,14 @@ module.exports = (env, argv) => {
         template: './public/index.html',
         title: 'TindeRestaurant',
       }),
+      ...(isProduction ? [
+        new CopyWebpackPlugin({
+          patterns: [
+            { from: 'public/404.html', to: '404.html' },
+            { from: 'public/.nojekyll', to: '.nojekyll', noErrorOnMissing: true },
+          ],
+        }),
+      ] : []),
     ],
     devServer: {
       static: {
