@@ -89,6 +89,7 @@ module.exports = (env, argv) => {
           patterns: [
             { from: 'public/404.html', to: '404.html' },
             { from: 'public/.nojekyll', to: '.nojekyll', noErrorOnMissing: true },
+            { from: 'public/images', to: 'images', noErrorOnMissing: true },
           ],
         }),
       ] : []),
