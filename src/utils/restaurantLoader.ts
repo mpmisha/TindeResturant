@@ -10,8 +10,21 @@ const restaurantData: Record<string, Restaurant> = {
   'local-bistro': localBistroData as Restaurant,
 };
 
-// Default placeholder image path
-export const PLACEHOLDER_IMAGE = '/images/placeholders/dish-placeholder.jpg';
+/**
+ * Get the base path for the application
+ * @returns Base path string
+ */
+const getBasePath = (): string => {
+  // Check if we're in GitHub Pages environment
+  if (typeof window !== 'undefined' && window.location.hostname === 'mpmisha.github.io') {
+    return '/TindeResturant';
+  }
+  // Local development
+  return '';
+};
+
+// Default placeholder image path with base path
+export const PLACEHOLDER_IMAGE = `${getBasePath()}/images/placeholders/dish-placeholder.jpg`;
 
 /**
  * Load restaurant data by ID
@@ -52,8 +65,9 @@ export const getImageWithFallback = (imagePath: string, restaurantId?: string): 
     return PLACEHOLDER_IMAGE;
   }
   
-  // Construct the full path: /images/dishes/<restaurant_name>/<image_path>
-  return `/images/dishes/${restaurantId}/${imagePath}`;
+  // Construct the full path with base path: [basePath]/images/dishes/<restaurant_name>/<image_path>
+  const basePath = getBasePath();
+  return `${basePath}/images/dishes/${restaurantId}/${imagePath}`;
 };
 
 /**

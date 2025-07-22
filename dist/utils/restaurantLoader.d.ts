@@ -1,5 +1,5 @@
 import { Restaurant } from '../types/restaurant';
-export declare const PLACEHOLDER_IMAGE = "/images/placeholders/dish-placeholder.jpg";
+export declare const PLACEHOLDER_IMAGE: string;
 /**
  * Load restaurant data by ID
  * @param restaurantId - The restaurant identifier
