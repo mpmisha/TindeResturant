@@ -18,6 +18,7 @@ import RestaurantHeader from '../components/RestaurantHeader/RestaurantHeader';
 import SwipeInterface from '../components/SwipeInterface/SwipeInterface';
 import SummaryView from '../components/SummaryView/SummaryView';
 import CompletionMessage from '../components/CompletionMessage/CompletionMessage';
+import ProgressBar from '../components/ProgressBar/ProgressBar';
 import styles from './RestaurantMenu.module.scss';
 
 const RestaurantMenu: React.FC = () => {
@@ -123,16 +124,7 @@ const RestaurantMenu: React.FC = () => {
       </main>
 
       {!showSummary && !isMenuComplete && (
-        <footer className={styles.footerSection}>
-          <Button 
-            appearance="primary" 
-            size="large"
-            onClick={() => setShowSummary(true)}
-            className={styles.doneButton}
-          >
-            Done
-          </Button>
-        </footer>
+<ProgressBar />
       )}
     </div>
   );

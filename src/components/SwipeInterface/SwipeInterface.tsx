@@ -38,14 +38,6 @@ const SwipeInterface: React.FC = () => {
 
   return (
     <div className={styles.swipeInterface}>
-      <div className={styles.progressSection}>
-        <Text size={300} className={styles.progressText}>
-          {isEditingCategory 
-            ? `Editing ${editingCategory}: ${remainingCount} dish${remainingCount !== 1 ? 'es' : ''} remaining`
-            : `${remainingCount} dish${remainingCount !== 1 ? 'es' : ''} remaining`
-          }
-        </Text>
-      </div>
 
       <div className={styles.cardContainer}>
         <div className={styles.cardStack}>

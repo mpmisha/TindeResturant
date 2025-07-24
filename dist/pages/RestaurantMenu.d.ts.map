@@ -1,1 +1,1 @@
-{"version":3,"file":"RestaurantMenu.d.ts","sourceRoot":"","sources":["../../src/pages/RestaurantMenu.tsx"],"names":[],"mappings":"AAAA,OAAO,KAA8B,MAAM,OAAO,CAAC;AAsBnD,QAAA,MAAM,cAAc,EAAE,KAAK,CAAC,EAoH3B,CAAC;AAEF,eAAe,cAAc,CAAC"}
+{"version":3,"file":"RestaurantMenu.d.ts","sourceRoot":"","sources":["../../src/pages/RestaurantMenu.tsx"],"names":[],"mappings":"AAAA,OAAO,KAA8B,MAAM,OAAO,CAAC;AAuBnD,QAAA,MAAM,cAAc,EAAE,KAAK,CAAC,EA2G3B,CAAC;AAEF,eAAe,cAAc,CAAC"}

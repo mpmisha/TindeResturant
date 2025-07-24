@@ -1,0 +1,49 @@
+.progressBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 40px;
+  padding: 0 var(--spacing-md);
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--bg-tertiary);
+  position: relative;
+}
+
+.progressIndicator {
+  height: 15px;
+  background: var(--color-primary);
+  border-radius: var(--radius-small);
+  transition: width 0.3s ease;
+}
+
+.progressText {
+  font-size: var(--font-size-sm);
+  color: var(--text-primary);
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+.completeButton {
+  padding: var(--spacing-xs) var(--spacing-sm);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-light);
+  background: var(--color-primary);
+  border: none;
+  border-radius: var(--radius-small);
+  cursor: pointer;
+  transition: background 0.3s ease;
+
+  &:hover {
+    background: var(--color-primary-hover);
+  }
+
+  &:active {
+    background: var(--color-primary-active);
+  }
+}
