@@ -238,14 +238,14 @@
 }
 
 .emptyState {
-  flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: var(--spacing-lg);
+  min-height: 300px;
+  padding: var(--spacing-xxl);
   text-align: center;
-  padding: var(--spacing-xl);
 }
 
 .emptyIcon {
@@ -260,9 +260,62 @@
 
 .emptyMessage {
   color: var(--text-secondary);
-  max-width: 350px;
-  line-height: 1.4;
   margin: 0;
+  max-width: 400px;
+  line-height: 1.5;
+}
+
+.refreshButton {
+  margin-top: var(--spacing-md);
+}
+
+.userIndicators {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-xs);
+  margin-top: var(--spacing-xs);
+}
+
+.userIndicator {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  padding: 2px 6px;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 12px;
+}
+
+.userColor {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
+}
+
+.userName {
+  color: var(--text-secondary);
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.quantity {
+  color: var(--text-tertiary);
+  font-size: 12px;
+  margin-left: 4px;
+}
+
+.colorBar {
+  display: flex;
+  height: 4px;
+  border-radius: 2px;
+  overflow: hidden;
+  margin-top: var(--spacing-sm);
+}
+
+.colorSegment {
+  height: 100%;
+  flex-shrink: 0;
 }
 
 .emptyHint {

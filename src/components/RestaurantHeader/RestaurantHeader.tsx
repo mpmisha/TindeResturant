@@ -3,7 +3,6 @@ import { Text } from '@fluentui/react-text';
 import { useSetRecoilState } from 'recoil';
 import { Restaurant } from '../../types/restaurant';
 import { currentCardIndexState, selectedDishesState, showSummaryState } from '../../state/restaurantState';
-import { ThemeToggle } from '../ThemeToggle/ThemeToggle';
 import styles from './RestaurantHeader.module.scss';
 
 interface RestaurantHeaderProps {
@@ -50,9 +49,6 @@ const RestaurantHeader: React.FC<RestaurantHeaderProps> = ({ restaurant }) => {
           )}
         </div>
         
-        <div className={styles.actions}>
-          <ThemeToggle />
-        </div>
       </div>
     </header>
   );

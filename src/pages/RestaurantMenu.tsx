@@ -19,6 +19,8 @@ import SwipeInterface from '../components/SwipeInterface/SwipeInterface';
 import SummaryView from '../components/SummaryView/SummaryView';
 import CompletionMessage from '../components/CompletionMessage/CompletionMessage';
 import ProgressBar from '../components/ProgressBar/ProgressBar';
+import Menu from '../components/Menu/Menu';
+import { useTable } from '../contexts/TableContext';
 import styles from './RestaurantMenu.module.scss';
 
 const RestaurantMenu: React.FC = () => {
@@ -107,8 +109,11 @@ const RestaurantMenu: React.FC = () => {
     );
   }
 
+  const { isConnected } = useTable();
+
   return (
     <div className={styles.restaurantMenu}>
+      <Menu />
       <div className={styles.headerSection}>
         <RestaurantHeader restaurant={restaurant} />
       </div>

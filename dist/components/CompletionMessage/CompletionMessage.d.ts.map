@@ -1,1 +1,1 @@
-{"version":3,"file":"CompletionMessage.d.ts","sourceRoot":"","sources":["../../../src/components/CompletionMessage/CompletionMessage.tsx"],"names":[],"mappings":"AAAA,OAAO,KAAK,MAAM,OAAO,CAAC;AAW1B,QAAA,MAAM,iBAAiB,EAAE,KAAK,CAAC,EAkE9B,CAAC;AAEF,eAAe,iBAAiB,CAAC"}
+{"version":3,"file":"CompletionMessage.d.ts","sourceRoot":"","sources":["../../../src/components/CompletionMessage/CompletionMessage.tsx"],"names":[],"mappings":"AAAA,OAAO,KAA8B,MAAM,OAAO,CAAC;AAcnD,QAAA,MAAM,iBAAiB,EAAE,KAAK,CAAC,EAsG9B,CAAC;AAEF,eAAe,iBAAiB,CAAC"}

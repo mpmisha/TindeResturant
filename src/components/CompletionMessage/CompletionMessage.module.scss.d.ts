@@ -15,6 +15,8 @@ export interface Styles {
   viewButton: string;
   thankYou: string;
   loading: string;
+  uploadStatus: string;
+  successText: string;
 }
 
 export type ClassNames = keyof Styles;

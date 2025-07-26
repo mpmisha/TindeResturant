@@ -33,6 +33,14 @@ export interface Styles {
   emptyIcon: string;
   emptyTitle: string;
   emptyMessage: string;
+  refreshButton: string;
+  userIndicators: string;
+  userIndicator: string;
+  userColor: string;
+  userName: string;
+  quantity: string;
+  colorBar: string;
+  colorSegment: string;
   emptyHint: string;
 }
 
