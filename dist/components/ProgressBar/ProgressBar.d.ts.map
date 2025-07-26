@@ -1,1 +1,1 @@
-{"version":3,"file":"ProgressBar.d.ts","sourceRoot":"","sources":["../../../src/components/ProgressBar/ProgressBar.tsx"],"names":[],"mappings":"AAAA,OAAO,KAAK,MAAM,OAAO,CAAC;AAK1B,QAAA,MAAM,WAAW,EAAE,KAAK,CAAC,EAwBxB,CAAC;AAEF,eAAe,WAAW,CAAC"}
+{"version":3,"file":"ProgressBar.d.ts","sourceRoot":"","sources":["../../../src/components/ProgressBar/ProgressBar.tsx"],"names":[],"mappings":"AAAA,OAAO,KAAK,MAAM,OAAO,CAAC;AAK1B,QAAA,MAAM,WAAW,EAAE,KAAK,CAAC,EAoBxB,CAAC;AAEF,eAAe,WAAW,CAAC"}

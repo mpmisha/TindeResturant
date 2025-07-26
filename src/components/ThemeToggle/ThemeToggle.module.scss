@@ -1,0 +1,61 @@
+.themeToggle {
+  color: var(--text-secondary);
+  border: none;
+  background: transparent;
+  transition: color 0.2s ease, background-color 0.2s ease;
+  
+  &:hover {
+    color: var(--text-primary);
+    background-color: var(--bg-tertiary);
+  }
+  
+  &:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+  
+  // Ensure icon is properly aligned
+  :global(.fui-Button__icon) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+// Mobile adjustments
+@media (max-width: 480px) {
+  .themeToggle {
+    min-width: 32px;
+    min-height: 32px;
+    padding: var(--spacing-xs);
+  }
+}
+
+// High contrast mode
+@media (prefers-contrast: high) {
+  .themeToggle {
+    border: 1px solid var(--text-secondary);
+    
+    &:hover {
+      border-color: var(--text-primary);
+    }
+  }
+}
+
+// Touch device optimizations
+@media (hover: none) and (pointer: coarse) {
+  .themeToggle {
+    min-height: 44px;
+    min-width: 44px;
+    
+    &:hover {
+      color: var(--text-secondary);
+      background-color: transparent;
+    }
+    
+    &:active {
+      color: var(--text-primary);
+      background-color: var(--bg-tertiary);
+    }
+  }
+}

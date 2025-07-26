@@ -7,6 +7,7 @@ export interface Styles {
   restaurantInfo: string;
   restaurantName: string;
   phoneNumber: string;
+  actions: string;
 }
 
 export type ClassNames = keyof Styles;

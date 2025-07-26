@@ -66,6 +66,13 @@
   text-overflow: ellipsis;
 }
 
+.actions {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
 // Mobile optimizations
 @media (max-width: 480px) {
   .container {

@@ -24,7 +24,7 @@ body {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  background-color: #f8f9fa;
+  background-color: var(--bg-secondary);
 }
 
 #root {
@@ -180,7 +180,64 @@ html {
   }
 }
 
-// Dark mode support (future enhancement)
+// Dark theme variables
+[data-theme="dark"] {
+  // Colors
+  --color-primary: #4fc3f7;
+  --color-primary-dark: #29b6f6;
+  --color-secondary: #90a4ae;
+  --color-success: #4caf50;
+  --color-warning: #ff9800;
+  --color-error: #f44336;
+  
+  // Backgrounds
+  --bg-primary: #121212;
+  --bg-secondary: #1e1e1e;
+  --bg-tertiary: #2d2d2d;
+  
+  // Text colors
+  --text-primary: #ffffff;
+  --text-secondary: #e0e0e0;
+  --text-tertiary: #bdbdbd;
+  
+  // Shadows (darker for dark theme)
+  --shadow-card: 0 2px 8px rgba(0, 0, 0, 0.4);
+  --shadow-card-hover: 0 4px 16px rgba(0, 0, 0, 0.6);
+  --shadow-overlay: 0 8px 32px rgba(0, 0, 0, 0.8);
+}
+
+// Theme transition
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+// Prevent transitions on theme change for specific elements
+.no-theme-transition,
+.no-theme-transition * {
+  transition: none !important;
+}
+
+// Dark mode support (respects system preference when no theme is set)
 @media (prefers-color-scheme: dark) {
-  // Dark mode variables can be added here in the future
+  :root:not([data-theme]) {
+    // Apply dark theme variables when system prefers dark and no explicit theme is set
+    --color-primary: #4fc3f7;
+    --color-primary-dark: #29b6f6;
+    --color-secondary: #90a4ae;
+    --color-success: #4caf50;
+    --color-warning: #ff9800;
+    --color-error: #f44336;
+    
+    --bg-primary: #121212;
+    --bg-secondary: #1e1e1e;
+    --bg-tertiary: #2d2d2d;
+    
+    --text-primary: #ffffff;
+    --text-secondary: #e0e0e0;
+    --text-tertiary: #bdbdbd;
+    
+    --shadow-card: 0 2px 8px rgba(0, 0, 0, 0.4);
+    --shadow-card-hover: 0 4px 16px rgba(0, 0, 0, 0.6);
+    --shadow-overlay: 0 8px 32px rgba(0, 0, 0, 0.8);
+  }
 }
